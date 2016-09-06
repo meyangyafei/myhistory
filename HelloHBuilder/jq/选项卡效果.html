@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选项卡效果</title>
+		<style>
+		*{margin:0;padding:0;}
+			#box{
+				width:300px;height:225px;border:1px solid red;margin:30px auto;
+			}
+			span{
+				display:inline-block;padding:5px 15px;background:#ccc;margin:0 15px;border:1px solid #ddd;border-bottom:none;
+			}
+			.cont{
+				padding:15px;border:1px solid #ddd;font-size:24px;background-color:#efefef;display:none;
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script>
+			$(function(){
+				/*$(".span1").mouseenter(function(){
+					$(".cont1").slideDown(500);
+				});
+				$(".span1").mouseleave(function(){
+					$(".cont1").slideUp(500);
+				});
+				$(".span2").mouseenter(function(){
+					$(".cont2").slideDown(500);
+				});
+				$(".span2").mouseleave(function(){
+					$(".cont2").slideUp(500);
+				});
+				$(".span3").mouseenter(function(){
+					$(".cont3").slideDown(500);
+				});
+				$(".span3").mouseleave(function(){
+					$(".cont3").slideUp(500);
+				});*/
+				$(".span1").click(function(){
+					$(".cont1").slideDown(500);
+				});
+				$(".span1").mouseleave(function(){
+					$(".cont1").slideUp(500);
+				});
+				$(".span2").click(function(){
+					$(".cont2").slideDown(500);
+				});
+				$(".span2").mouseleave(function(){
+					$(".cont2").slideUp(500);
+				});
+				$(".span3").click(function(){
+					$(".cont3").slideDown(500);
+				});
+				$(".span3").mouseleave(function(){
+					$(".cont3").slideUp(500);
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="tab"><span class="span1">新闻</span ><span class="span2">活动</span><span class="span3">体育</span></div>
+			<div class="cont1 cont">新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻</div>
+			<div class="cont2 cont">活动活动活动活动活动活动活动活动活动活动活动活动活动活动活动活动活</div>
+			<div class="cont3 cont">体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育体育</div>
+		</div>
+	</body>
+</html>

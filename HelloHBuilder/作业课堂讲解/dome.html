@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>核心dome操作</title>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script>
+			/*
+			 * 1. 子标签操作函数
+			 * A.append(B);将B指代的数据，添加到A中去
+			 * A.appendTo(B);将A添加到B元素中
+			 * A.prepend(B);
+			 * A.prependTo(B);
+			 * 
+			 * 2. 同辈标签操作函数
+			 * A.after(B);// A->b
+			 * A.before(B);
+			 * A.insertAfter(B);// b->a
+			 * A.insertBefore(B);
+			 * 
+			 * 3.其他操作
+			 * A.wrap(content);// 使用指定的标签，包裹选中的JQuery对象
+			 * A.unwrap();// 去除掉选中的标签的父标签
+			 * A.empty();//查询选中的JQuery对象中不包含子标签或者文本的空标签
+			 * A.remove();//删除选中的A【JQuery对象】
+			 */
+			$(function(){
+				//$(".container").append($(".item1"));//将B指代的数据，添加到A中去
+				//$(".item1").appendTo(".container");//将A添加到B元素中
+				//$(".container").prepend($(".item2"));
+				//$(".item2").prependTo($(".container"));
+				//$(".item2").after($(".item1"));//A->b
+				//$(".item2").before($(".item1"));
+				//$(".item1").insertAfter($(".item2"));//2->1
+				//$(".item2").insertBefore($(".item1"));//2->1
+				//$(".item1").wrap("<p style='border:1px solid red'></p>");
+				//$(".item1").unwrap("<p></p>");
+				//$(".container").empty();
+				//$(".container").remove(".container")
+				
+			})
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		
+		<div class="container">
+			<span>我是原来的内容</span>
+			<span></span>
+		</div>
+		
+		<div class="container1">
+			<span>111111</span>
+		</div>
+		
+		<!-- 段落 -->
+		<p class="item1">
+			吾问无为谓吾问无为谓
+		</p>
+		<p class="item2">
+			生活顶顶顶顶
+		</p>
+	</body>
+</html>

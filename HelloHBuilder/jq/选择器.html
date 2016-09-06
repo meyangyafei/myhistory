@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script>
+			$(function(){
+				/*var idObj=$("#container");
+				console.log(idObj)
+				var classObj=$(".Item");
+				console.log(classObj);
+				var baohanoObj=$("#container .Item");
+				console.log(baohanoObj)*/
+				$("#idselector").click(function(){
+					$("#container").css("border","1px solid red");
+				})
+				$("#classselector").click(function(){
+					$(".Item").css("border","1px solid red");
+				})
+				$("#tagselector").click(function(){
+					$("p").css("border","1px solid red");
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" id="idselector" value="id选择器"/><br />
+		<input type="button" id="classselector" value="class选择器"/><br />
+		<input type="button" id="tagselector" value="tag选择器"/><br />
+		<input type="button" id="containerselector" value="包含选择器"/><br />
+		<input type="button" id="childselector" value="子类选择器"/><br />
+		<input type="button" id="fuheselector" value="复合选择器"/><br />
+		<input type="button" id="xianglinselector" value="i相邻选择器"/><br />
+		<input type="button" id="borderselector" value="兄弟选择器"/><br />
+		<div id="container">
+			<p class="Item">text1</p>
+			<p class="Item">text1</p>
+			<p class="Item">text1</p>
+			<p class="Item">text1</p>
+			<div class="Item">
+				<p class="Item1">text2</p>
+				<p class="Item1">text2</p>
+				<p class="Item1">text2</p>
+				<p class="Item1">text2</p>
+			</div>
+			
+			
+		</div>
+	</body>
+</html>

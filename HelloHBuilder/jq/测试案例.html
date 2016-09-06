@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script>
+			$(function(){
+				//匹配找到的第一个元素
+				$("#first").click(function(){
+					$("ul li:first").css({"color":"red"});
+				})
+				//匹配找到的最后一个元素
+				$("#last").click(function(){
+					$("ul li:last").css({"color":"yellow"});
+				})
+				//匹配一个给定索引值的元素
+				$("#eq").click(function(){
+					$("li:eq(1)").css({"color":"yellow"});
+				})
+				//匹配所有索引值为偶数的元素
+				$("#event").click(function(){
+					$("li:even").css({"color":"yellow"});
+				})
+				//匹配所有索引值为奇数的元素
+				$("#odd").click(function(){
+					$("li:odd").css({"color":"blue"});
+				})
+				//匹配大于给定索引值的所有元素
+				$("#gt").click(function(){
+					$("li:gt(1)").css({"color":"blue"});
+				})
+				//匹配小于给定索引值的所有元素
+				$("#lt").click(function(){
+					$("li:lt(3)").css({"color":"blue"});
+				})
+				//去除所有与给定选择器匹配的元素
+				$("#not").click(function(){
+					$("li:not(:empty)").css({"color":"blue"});
+				})
+				//匹配包含给定文本的元素
+				$("#contains").click(function(){
+					$(":contains('测试案例')").css({"color":"blue"});
+				})
+				//匹配所有不包含子元素或者文本的空元素
+				$("#empty").click(function(){
+					$(":empty").css({"color":"blue"});
+				})
+				//匹配包含selector选中元素的外层元素
+				$("#has").click(function(){
+					$("div:has(p)").css({"color":"blue"});
+				})
+				//匹配指定元素下的第一个子元素
+				$("#first-child").click(function(){
+					$("ul li:first-child").css({"color":"blue"});
+				})
+				
+			})
+			
+			
+			
+			
+		</script>
+	</head>
+	<style>
+		input[type="button"]{width:100px;height:30px;border:#ccc solid 1px;border-radius:2px;}
+	</style>
+	<body>
+		<input type="button" id="first" value="first选择器" />
+		<input type="button" id="last" value="last选择器" />
+		<input type="button" id="eq" value="eq选择器" />
+		<input type="button" id="event" value="event选择器" />
+		<input type="button" id="odd" value="odd选择器" />
+		<input type="button" id="gt" value="gt选择器" />
+		<input type="button" id="lt" value="lt选择器" />
+		<input type="button" id="not" value="not选择器" />
+		<input type="button" id="contains" value="contains选择器" />
+		<input type="button" id="empty" value="empty选择器" />
+		<input type="button" id="has" value="has选择器" />
+		<input type="button" id="first-child" value="first-chiild选择器" />
+		
+		<ul>
+			<li>测试案例</li>
+			<li>测试案例</li>
+			<li>测试案例</li>
+			<div>
+				<p>看看客户和改革和环境</p>
+				<p>看看客户和改革和环境</p>
+				<p>看看客户和改革和环境</p>
+			</div>
+			<li>测试案例</li>
+			<li>测试案例</li>
+			<li>测试案例</li>
+		</ul>
+	</body>
+</html>

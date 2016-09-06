@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选项卡</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script>
+			$(function(){
+				$("li").mouseenter(function () {
+					// 获取当前鼠标进入选项卡的下标
+					var currentIndex = $(this).index();
+					// 让所有的选项卡内容隐藏
+					$(".container > div").css("display", "none");
+					// 让对应下标的选显卡内容显示
+					$(".container > div").eq(currentIndex).css("display", "block");
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<ul>
+				<li class="first">新闻</li>
+				<li>娱乐</li>
+				<li>电影</li>
+			</ul>
+			<div class="fridt">
+				新闻新闻新闻新闻新闻新闻新闻新闻
+				新闻新闻新闻新闻新闻新闻新闻新闻
+				新闻新闻新闻新闻新闻新闻新闻新闻
+				
+				
+			</div>
+			<div>
+				娱乐娱乐娱乐娱乐娱乐娱乐娱乐娱乐
+				娱乐娱乐娱乐娱乐娱乐娱乐娱乐娱乐
+				娱乐娱乐娱乐娱乐娱乐娱乐娱乐娱乐
+				
+			</div>
+			<div>
+				电影电影电影电影电影电影电影电影
+				电影电影电影电影电影电影电影电影
+				电影电影电影电影电影电影电影电影
+			</div>
+			
+		</div>
+	</body>
+</html>

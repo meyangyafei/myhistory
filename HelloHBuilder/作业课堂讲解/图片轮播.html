@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script>
+			$(function () {
+				// 切图函数
+				/*setInterval(function() {
+					// 获取当前能看到的图片
+					var index = $("li:visible").index();
+					index++;
+					if(index >= $("li").size()) {
+						index = 0;
+					}
+					
+					$("li").fadeOut();
+					
+					$("li").eq(index).fadeIn();
+					
+				}, 2000);*/
+				setInterval(function(){
+					var index=$("li:visible").index();
+					index++;
+					if(index>=$("li").size()){
+						index=0;
+					}
+					$("li").fadeOut();
+					$("li").eq(index).fadeIn();
+					
+					
+					
+				},1000)
+				
+			});
+			
+				
+			
+			
+			
+			
+			
+			
+			
+		</script>
+		<style>
+			ul, ul > li, img{width:600px;height:300px;}
+			ul > li{position:absolute;list-style: none;
+			border:#ccc solid 1px;border-radius:8px;display:none;}
+			img{border:#ccc solid 1px;border-radius: 8px;}
+			ul > li.active{display: block;}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li class="active"><img src="http://127.0.0.1:8020/HelloHBuilder/作业课堂讲解/images/flash2.jpg"/></li>
+			<li><img src="http://127.0.0.1:8020/HelloHBuilder/作业课堂讲解/images/flash3.jpg"/></li>
+			<li><img src="http://127.0.0.1:8020/HelloHBuilder/作业课堂讲解/images/flash4.jpg"/></li>
+		</ul>
+		
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图片透明度轮播</title>
+		<style>
+			input{
+				display:inline-block;
+			}
+			img{display:inline-block;float:left;width:300px;height:400px;vertical-align:bottom;}
+			div{
+				width:900px;height:400px
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script>
+		
+			/*$(function(){
+				$("#btn1").click(function(){
+					$("img").fadeOut(1000);
+				})
+				$("#btn2").click(function () {
+					$("img").fadeIn(1000);
+				});
+			})*/
+			$(function(){
+				var timer=setInterval(function(){
+					$("img").fadeOut(1000);
+					$("img").fadeIn(1000);
+				},1000);
+				$("div").mouseenter(function(){
+					clearInterval(timer);	
+				});
+				$("div").mouseleave(function(){
+					timer=setInterval(function(){
+				
+						$("img").fadeOut(1000);
+				
+						$("img").fadeIn(1000);
+				
+					},1000);
+				});	
+			})	
+		</script>
+	</head>
+	<body>
+		<!--<input type="button" id="btn1" value="隐藏">
+		<input type="button" id="btn2" value="显示">-->
+		<div><img src="images/6.jpg" /><img src="images/7.jpg" /><img src="images/19.jpg" /></div>
+	</body>
+	
+</html>

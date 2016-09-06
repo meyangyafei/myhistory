@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.container{
+				width:1000px;
+				border:1px solid #ccc;
+				border-radius:5px;
+				margin:auto;
+			}
+			.edit{
+				width:800px;
+				height:80px;
+				border:1px solid red;
+				border-radius:5px;
+				margin:auto;
+			}
+			#publishMsg{
+				width:780px;
+				height:60px;
+				border:none;
+				margin:auto;
+				display: block;
+				outline: none;
+			}
+			input[type='button']{width:100px;height:30px;
+				border:peachpuff solid 1px;
+				border-radius: 5px;
+				float:right;
+				margin-right:100px;
+				font-size:18px;}
+			.history{
+				width:780px;
+				border-top:peachpuff dashed 1px;
+				margin:auto;
+				margin-top:40px;
+			}
+			.item{
+				width:100%;
+				padding-top:10px;
+				padding-bottom: 10px;
+				border-bottom: blue dashed 1px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script>
+			$(function(){
+				$("#publish").click(function(){
+					var msg=$("#publishMsg").val();
+					//创建DIV
+					var itemDiv=$("<div>");
+					itemDiv.addClass("item");//添加class
+					itemDiv.text(msg);
+					$(".history").prepend(itemDiv);
+					$("#publishMsg").val("");
+				})
+				
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="edit">
+				<textarea id="publishMsg">
+					
+				</textarea>
+			</div>
+			<input type="button" id="publish" value="发布"/>
+			<div class="history">
+				<div class="item">
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容
+				</div>
+				<div class="item">
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容
+				</div>
+				<div class="item">
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容
+				</div>
+				<div class="item">
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容
+				</div>
+				<div class="item">
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容
+				</div>
+				<div class="item">
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容帖子内容
+					帖子内容帖子内容帖子内容帖子内容
+				</div>
+			</div>
+			
+			
+			
+			
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+		<style>
+			.container{position:relative;}
+			.box{padding:5px;float:left;}
+			.item{padding:5px;border:#ccc solid 1px; border-radius: 5px;box-shadow: 5px 5px 5px 0 #ccc;}
+			img{width:200px;height:auto;}
+		</style>
+		<script>
+			$(function(){
+				var jsonImg = [{"src":"img/1.jpg"},{"src":"img/2.jpg"},{"src":"img/3.jpg"},{"src":"img/4.jpg"},{
+					"src":"img/5.jpg"},{"src":"img/6.jpg"},{"src":"img/7.jpg"},{"src":"img/8.jpg"},
+					{"src":"img/9.jpg"},{"src":"img/10.jpg"},{"src":"img/11.jpg"},{"src":"img/12.jpg"},{"src":"img/13.jpg"},
+					{"src":"img/14.jpg"},{"src":"img/15.jpg"},{"src":"img/16.jpg"},{"src":"img/17.jpg"},{"src":"img/18.jpg"},
+					{"src":"img/19.jpg"},{"src":"img/20.jpg"},{"src":"img/21.jpg"},{"src":"img/22.jpg"},{"src":"img/23.jpg"},
+					{"src":"img/24.jpg"},{"src":"img/25.jpg"}];
+					
+					$(window).on("scroll",function(){
+						if(loadFlag()){
+							$.each(jsonImg.date,function(index,value){
+								var $box=$("<div>").addClass("box").appendTo(".container");
+								var $item=$("<div>").addClass("item").appendTo($box);
+								var $img=$("<img>").attr("src",$(value).attr("src")).appendTo($item);
+							});
+							loadImg();
+						}
+					})
+					function loadFlag(){
+						var $stop=$(window).scrollTop()+$(".box").last().outerHeight();
+						var $lastImgTop=$(".box").last().offset().top-500;
+						return ($stop>$lastImgTop)?true:false;
+					}
+					
+					
+					
+				$(window).on("load", function () {
+					loadImg();
+				})
+				function loadImg(){
+					//获取视窗宽度
+					var clientWidth=$(document).width();
+					//获取所有图片--box
+					var $imgs=$(".box");
+					//计算第一行能放多少张图片
+					var $clos=Math.floor(clientWidth/$imgs.eq(0).outerWidth());
+					// 设置容器的宽度
+					$(".container").css({
+						"width":$clos * $imgs.eq(0).outerWidth(),
+						"margin":"auto"
+					});
+					
+					//循环存放
+					var rowHeight=[];
+					$imgs.each(function(index){
+						if(index<$clos){
+							//保存第一列高度数组
+							rowHeight[index]=$imgs.eq(index).outerHeight();
+						}else{
+							// 第二行图片开始：定位--> 更新数组
+							var minHeight = Math.min.apply(null, rowHeight);//最小高度
+							var minIndex = $.inArray(minHeight, rowHeight);//最小高度的下标
+							// 图片定位
+							/*$imgs.eq(index).css({
+								"position":"absolute",
+								"left":$imgs.eq(minIndex).position().left,
+								"top":minHeight
+							});*/
+							$imgs.eq(index).css({
+								"position":"absolute",
+								"left":"50%",
+								"top":"50%"
+							});
+							$imgs.eq(index).animate({
+								"left":$imgs.eq(minIndex).position().left,
+								"top":minHeight
+							},1000);
+							// 更新数组
+							rowHeight[minIndex] += $imgs.eq(index).outerHeight();
+						}
+						
+					})	
+					
+				}
+				
+			})
+		</script>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div class="box">
+				<div class="item">
+					<img src="img/1.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/2.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/3.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/4.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/5.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/6.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/7.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/8.jpg"/>
+				</div>
+			</div>
+			<div class="box">
+				<div class="item">
+					<img src="img/7.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/8.jpg"/>
+				</div>
+			</div>
+			<div class="box">
+				<div class="item">
+					<img src="img/1.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/2.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/3.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/4.jpg"/>
+				</div>
+			</div>
+			<div class="box">
+				<div class="item">
+					<img src="img/1.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/2.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/3.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/4.jpg"/>
+				</div>
+			</div>
+			<div class="box">
+				<div class="item">
+					<img src="img/1.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/2.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/3.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/4.jpg"/>
+				</div>
+			</div>
+			<div class="box">
+				<div class="item">
+					<img src="img/1.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/2.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/3.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/4.jpg"/>
+				</div>
+			</div>
+			<div class="box">
+				<div class="item">
+					<img src="img/1.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/2.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/3.jpg"/>
+				</div>
+			</div>
+			
+			<div class="box">
+				<div class="item">
+					<img src="img/4.jpg"/>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+		</div>
+	</body>
+</html>

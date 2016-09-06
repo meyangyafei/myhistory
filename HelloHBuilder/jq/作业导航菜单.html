@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业导航菜单</title>
+		<style>
+		*{margin:0;padding:0}
+			li{height:30px;border:1px solid blue;margin-top:2px;margin:0 atuo;}
+			ul{
+				width:100px;float:left;display:none
+			}
+			span{
+				display:inline-block;padding:5px 28px;margin:0 2px;background:red
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script>
+		$(function(){
+			$("#span1").click(function(){
+				$("#menuItem1").slideDown(500)
+			});
+			$("#span1").mouseleave(function(){
+				$("#menuItem1").mouseleave(function(){
+					$("#menuItem1").slideUp(500);
+				});
+			});
+			$("#span2").click(function(){
+				$("#menuItem2").slideDown(500)
+			});
+			$("#span2").mouseleave(function(){
+				$("#menuItem2").mouseleave(function(){
+					$("#menuItem2").slideUp(500);
+				});
+			});
+			$("#span3").click(function(){
+				$("#menuItem3").slideDown(500)
+			});
+			$("#span3").mouseleave(function(){
+				$("#menuItem3").mouseleave(function(){
+					$("#menuItem3").slideUp(500);
+				});
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<p><span id="span1">菜单1</span><span id="span2">菜单2</span></p>
+			<ul id="menuItem1" style="list-style:none;">
+				<li>英雄联盟</li>
+				<li>穿越火线</li>
+				<li>梦幻西游</li>
+				<li>逆战</li>
+			</ul>
+			<ul id="menuItem2" style="list-style:none;">
+				<li>英雄联盟</li>
+				<li>穿越火线</li>
+				<li>梦幻西游</li>
+				<li>逆战</li>
+			</ul>
+		
+		<!--<div id="nav" style="width:200px;height:200px;text-align:center;float:left">菜单
+			<ul id="menuItem" style="list-style:none;">
+				<li>英雄联盟</li>
+				<li>穿越火线</li>
+				<li>梦幻西游</li>
+				<li>逆战</li>
+			</ul>
+		</div>
+		<div id="nav" style="width:200px;height:200px;text-align:center;float:left">菜单
+			<ul id="menuItem" style="list-style:none;">
+				<li>英雄联盟</li>
+				<li>穿越火线</li>
+				<li>梦幻西游</li>
+				<li>逆战</li>
+			</ul>
+		</div>-->
+		
+			
+			
+	</body>
+</html>
